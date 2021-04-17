@@ -1,38 +1,361 @@
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+  /* background: url("./components/bg.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 100% 100%; */
+  background: #282c34;
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+}
+
+ul {
+  list-style: none;
+}
+
+.navbar {
+  background: #282c34 !important;
+}
+section {
+  padding: 2rem;
+  min-height: 100vh;
+}
+* {
+  color: #fff;
+  text-decoration: none;
+}
+
+.navbar-collapse {
+  flex-basis: 100%;
+  flex-grow: 0 !important;
   align-items: center;
+}
+
+.navbar-brand h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #feb633;
+}
+
+li.nav-item {
+  margin: 0 1rem;
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+li.nav-item a {
+  color: #fff !important;
+  position: relative;
+  transition: all 0.3s;
+}
+
+.navbar-nav li a::before,
+.navbar-nav a.active::before {
+  position: absolute;
+  content: "";
+  bottom: 6px;
+  left: 7px;
+  width: 0;
+  height: 2px;
+  background: #feb633;
+  transition: all 0.3s;
+}
+
+.navbar-nav li a:hover:before,
+.navbar-nav a.active::before {
+  width: 30px;
+}
+
+li.nav-item a:hover,
+.navbar-nav a.active {
+  color: #feb633 !important;
+}
+
+.intro h1 {
+  text-align: center;
+  margin-top: 10rem;
+  font-size: 4rem;
+}
+.typewrite {
+  text-decoration: none;
+}
+
+.typewrite span {
+  color: #feb633;
+}
+
+.social-icon {
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  list-style: none;
+  align-items: center;
+  margin: 1rem;
 }
 
-.App-link {
-  color: #61dafb;
+.social-icon li {
+  padding: 0.7rem 1rem;
+  background: transparent;
+  border-radius: 100%;
+  margin: 1rem;
+  transition: all 0.3s;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.social-icon li:hover {
+  background: #feb633;
+}
+
+/********************ABOUT*****************************/
+.about,
+.contact {
+  background: #46444477;
+}
+.about .my__img {
+  padding-right: 30px;
+  padding-bottom: 30px;
+  height: 581px;
+  width: 383px;
+  position: relative;
+}
+
+.about .my__img img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  position: relative;
+  z-index: 5;
+  box-shadow: 0 0 65px 0 rgb(0 0 0 / 15%);
+}
+
+.about .my__img:after,
+.about .my__img:before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  width: 90%;
+  height: 90%;
+  border: 8px solid rgba(0, 0, 0, 0.05);
+  margin-left: 10%;
+}
+
+.about .my__img:after {
+  left: 15px;
+  bottom: 15px;
+  border-width: 2px;
+  width: calc(90% - 30px);
+  height: calc(90% - 30px);
+}
+
+.about .my__img:after,
+.about .my__img:before {
+  border: 8px solid rgba(255, 255, 255, 0.2);
+}
+
+.about-info p {
+  font-size: 1.2rem;
+  line-height: 2.3rem;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.btnn {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+button.btn,
+a.btn {
+  background: transparent;
+  color: #fff;
+  margin: 1rem;
+  padding: 1rem 2rem;
+  text-transform: uppercase;
+  border-radius: 0px;
+}
+
+button.btn:focus,
+a.btn:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+button.cv {
+  border: 2px solid #feb633;
+  background: #feb633;
+  margin-left: 0;
+  transition: all 0.3s;
+}
+
+button.cv:hover {
+  color: #feb633 !important;
+  background: transparent !important;
+}
+
+a.contact {
+  background: transparent;
+  color: #feb633;
+  border: 2px solid #feb633;
+  transition: all 0.3s;
+}
+
+a.contact:hover {
+  background: #feb633;
+  color: #fff;
+}
+
+.section-title {
+  text-align: center;
+  position: relative;
+  margin-bottom: 4rem;
+  font-size: 45px;
+  font-weight: 700;
+}
+
+.section-title:before {
+  position: absolute;
+  content: "";
+  bottom: 0;
+  left: 0;
+  width: 100px;
+  height: 4px;
+  background: #feb633;
+  transition: all 0.3s;
+}
+.section-title:before {
+  right: 0;
+  margin: -12px auto;
+}
+
+.breadcrumb {
+  justify-content: center;
+  margin: 4rem 1.5rem 0 3.5rem;
+}
+.breadcrumb-item + .breadcrumb-item::before {
+  content: var(--bs-breadcrumb-divider, ".");
+}
+
+.exp .we {
+  border: 1px solid #777777;
+  padding: 3rem;
+  background: transparent;
+  transition: all 0.3s;
+}
+
+.exp .we span {
+  color: #777777;
+}
+
+.exp .we p {
+  margin-top: 1rem;
+  text-align: justify;
+  color: rgb(255, 255, 255, 0.6);
+}
+
+.exp .we:hover {
+  background: #feb633;
+}
+
+/*******************CONTACT*****************/
+.contact ul.contact-list {
+  margin: 2rem 0;
+  padding-inline-start: 0px;
+}
+
+.contact ul.contact-list li {
+  display: flex;
+  margin-bottom: 2rem;
+}
+
+.contact ul.contact-list li span,
+.contact ul.contact-list li i {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.contact ul.contact-list li .icon {
+  font-size: 1.5rem;
+  margin-right: 1.2rem;
+}
+.contact ul.contact-list li .icon-info {
+  font-size: 1.2rem;
+}
+
+label {
+  color: #777;
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+}
+
+.form-control,
+.form-control:focus {
+  color: #212529;
+  background-color: #3d3e42;
+  padding: 1.375rem 1.75rem;
+  border-radius: 0rem !important;
+}
+
+.form-control:focus {
+  border-color: #777 !important;
+  outline: none !important;
+  box-shadow: none !important;
+  color: #777;
+}
+
+.follow-list ul {
+  padding-inline-start: 0px;
+  display: flex;
+  margin: 2rem 0;
+}
+
+.follow-list ul li {
+  margin: 0 1rem;
+}
+
+.follow-list ul li a i {
+  color: #727b86;
+  transition: all 0.5s;
+}
+
+.follow-list ul li a i:hover {
+  color: #feb633;
+}
+
+/***********************BACKGROUND****************/
+ul.timeline {
+  position: relative;
+}
+ul.timeline:before {
+  content: " ";
+  background: #d4d9df;
+  display: inline-block;
+  position: absolute;
+  left: 29px;
+  width: 2px;
+  height: 100%;
+  z-index: 400;
+}
+ul.timeline > li {
+  margin: 20px 0;
+  padding-left: 20px;
+}
+ul.timeline > li:before {
+  content: " ";
+  background: white;
+  display: inline-block;
+  position: absolute;
+  border-radius: 50%;
+  border: 3px solid #feb633;
+  left: 20px;
+  width: 20px;
+  height: 20px;
+  z-index: 400;
+}
+
+ul.timeline > li > span {
+  color: #fff;
+}
+
+ul.timeline > li > span.date {
+  float: right;
+}
+
+ul.timeline > li > p {
+  color: #777;
 }
